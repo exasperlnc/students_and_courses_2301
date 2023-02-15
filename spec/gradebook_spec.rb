@@ -53,6 +53,5 @@ RSpec.describe Gradebook do
     @gradebook.add_course(@course2)
 
     expect(@gradebook.show_grades).to eq({"Jordan"=>[100], "Morgan"=>[15]})
-
   end
 end

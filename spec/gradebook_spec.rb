@@ -45,4 +45,14 @@ RSpec.describe Gradebook do
 
     expect(@gradebook.students_below(20)).to eq([@student1])
   end
+
+  it 'shows all grades' do
+    @student1.log_score(15)
+    @student2.log_score(100)
+    @gradebook.add_course(@course1)
+    @gradebook.add_course(@course2)
+
+    expect(@gradebook.show_grades).to eq({"Jordan"=>[100], "Morgan"=>[15]})
+
+  end
 end
